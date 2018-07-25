@@ -52,7 +52,21 @@ var employees = [
 
 //Code Here
 
+const employeeUpdater= () => {
+  for(var i = 0; i < employees.length; i++){
+    for(var key in employees[i]){
+      if(key === 'firstName' && employees[i][key] === 'Theo'){
+        delete employees[i];
+      }
+      else if(key === 'firstName' && employees[i][key] === 'Lorie'){
+        employees[i]['department']= 'HR'
+      }
+    }
+  }
+  return employees;
+}
 
+employeeUpdater();
 
 ////////// PROBLEM 2 //////////
 
@@ -69,9 +83,18 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 */
 
 //Code Here
+const removeDuplicates= (workplaceAccidents) => {
+  const newArr= [];
+  for(var i= 0; i < workplaceAccidents.length; i++){
+    for(var j= 0; j < newArr.length; j++)
+    if(workplaceAccidents[i] != newArr[j]) {
+      newArr.push(workplaceAccidents[i]);
+    }
+  }
+  return newArr;
+}
 
-
-
+removeDuplicates(workplaceAccidents);
 ////////// PROBLEM 3 //////////
 
 // Do not edit the code below.
@@ -97,10 +120,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
-
-
+var grumpyActivity= cat.catFriends[0].activities[1];
+var fluffy2ndFriend= cat.catFriends[1].name;
 
 ////////// PROBLEM 4 //////////
 
@@ -139,8 +160,22 @@ var myCar = {
 */
 
 //Code Here
+const recordCleaner = (myCar) => {
+  for(var key in myCar){
+    if(key === 'accidents'){
+      for (var i= 0; i< myCar[key].length; i++){
+        for(var key2 in myCar[key][i]){
+          if(key2 === 'atFaultForAccident') {
+            myCar[key][i][key2]= false;
+          }
+        }
+      }
+      return myCar;
+    }
+  }
+}
 
-
+recordCleaner(myCar);
 
 ////////// PROBLEM 5 //////////
 
@@ -158,5 +193,18 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 */
 
 //Code Here
+const looper= (numsArr) => {
+  for(var i= 0; i< numsArr.length; i++){
+    for(var j= 0; j<numsArr[i].length; j++){
+      if(numsArr[i][j] % 2 != 0){
+        numsArr[i][j] = 'odd';
+      } else{
+        numsArr[i][j]= 'even';
+      }
+    }
+  }
+  return numsArr;
+}
 
+looper(numsArr);
 
