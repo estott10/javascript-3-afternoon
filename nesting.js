@@ -83,15 +83,27 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 */
 
 //Code Here
+// Do not edit the code below.
+var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
+// Do not edit the code above.
+
+/*
+  The array above represents IDs tied to reported workplace accidents. 
+  An employee accidentally entered in duplicates to array, making it look as though there are more accidents this year than there actually are.
+    1. Write a function called 'removeDuplicates' that will remove all duplicate entries in the workplaceAccidents array.
+    2. Use nested for loops to check for duplicate numbers, and then remove the duplicates from the array.
+    3. Return the updated array.
+*/
+
+//Code Here
 const removeDuplicates= (workplaceAccidents) => {
-  const newArr= [];
   for(var i= 0; i < workplaceAccidents.length; i++){
-    for(var j= 0; j < newArr.length; j++)
-    if(workplaceAccidents[i] != newArr[j]) {
-      newArr.push(workplaceAccidents[i]);
+    for(var j= 1; j < workplaceAccidents.length; j++)
+    if(workplaceAccidents[i] === workplaceAccidents[j] && i != j) {
+      workplaceAccidents.splice(j, 1);
     }
   }
-  return newArr;
+  return workplaceAccidents;
 }
 
 removeDuplicates(workplaceAccidents);

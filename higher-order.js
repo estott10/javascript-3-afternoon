@@ -108,8 +108,9 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
 */
 
 let ordersTotal= //Code Here
-orders.map( ( (elem)=> elem['price'] + elem['tax']) );
+orders.map( ( (elem)=> elem['price'] + elem['tax'] ) );
 
+ordersTotal;
 
 ////////// PROBLEM 6 //////////
 
